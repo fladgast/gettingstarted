@@ -4,7 +4,7 @@
 
   <h3>
     <a
-      [title]="product.name + ' details'"
+      [title]="'Id = ' + product.id"
       [routerLink]="['/products', product.id]">
       {{ product.name }}
     </a>
@@ -14,7 +14,7 @@
     {{ product.description }}
   </p>
   <p>
-  <ng-template #defaultDescription>Description missing.</ng-template>
+  <ng-template #defaultDescription>Description missing</ng-template>
   </p>
   <button type="button" (click)="share()">
     Share
