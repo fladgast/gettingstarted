@@ -1,7 +1,7 @@
 /* Variables */
 
 :root {
-  --main-color: #1eaf11;
+  --main-color: #ad13c1;
 }
 
 /* Global Styles */
@@ -141,4 +141,11 @@ app-top-bar h1 {
   margin-bottom: 8px;
   border-radius: 2px;
   background-color: #EEEEEE;
+}
+
+.box {
+  border: solid 1px;
+  padding: 0px 20px 20px 20px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px;
 }
