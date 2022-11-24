@@ -36,7 +36,7 @@ export class CartComponent {
     this.cartService.addToCart(products[2])
   }
 
-  removeItem(p: Product, i: number): void {
+  removeItem(i: number): void {
     this.cartService.items.splice(i, 1);
   }
 }

@@ -9,7 +9,7 @@
 <div class="cart-item" *ngFor="let item of items; let i = index">
   <span>{{ item.name }} </span>
   <span>{{ item.price | currency }}</span>
-  <span><button type="button" (click)="removeItem(item, i)">X</button></span>
+  <span><button type="button" (click)="removeItem(i)">X</button></span>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
