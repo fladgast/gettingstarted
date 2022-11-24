@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { stringify } from 'querystring';
 
-import { products } from '../products';
+import { Product, products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +10,10 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+
+  constructor(
+    private cartService: CartService
+  ) {}
 
   products = [...products];
 
@@ -23,4 +28,9 @@ export class ProductListComponent {
   checkIfEmpty(s: string) {
     return s.trim().length
   }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+  }
+
 }
