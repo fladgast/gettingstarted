@@ -36,6 +36,10 @@ export class CartComponent {
     this.cartService.addToCart(products[2])
   }
 
+  clearCart() {
+    this.cartService.clearCart()
+  }
+
   removeItem(i: number): void {
     this.cartService.items.splice(i, 1);
   }
