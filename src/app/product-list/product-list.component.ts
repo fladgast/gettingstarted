@@ -16,6 +16,8 @@ export class ProductListComponent {
   ) {}
 
   products = [...products];
+  
+  brief: boolean = false;
 
   share() {
     window.alert('The product has been shared!');
@@ -33,4 +35,11 @@ export class ProductListComponent {
     this.cartService.addToCart(product);
   }
 
+  hideDescription() {
+    this.brief = true;
+  }
+
+  showDescription() {
+    this.brief = false;
+  }
 }

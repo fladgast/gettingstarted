@@ -1,26 +1,35 @@
 <h2>Products</h2>
 
+<button type="button" (click)="hideDescription()" *ngIf="!brief">Brief</button>
+<button type="button" (click)="showDescription()" *ngIf="brief">Details</button>
+
 <div *ngFor="let product of products" class="box">
+  <div *ngIf="!brief; else briefDescription">
+    <h3>
+      <a [title]="'Id = ' + product.id" [routerLink]="['/products', product.id]">
+        {{ product.name }}
+      </a>
+    </h3>
 
-  <h3>
-    <a
-      [title]="'Id = ' + product.id"
-      [routerLink]="['/products', product.id]">
-      {{ product.name }}
-    </a>
-  </h3>
+    <p *ngIf="checkIfEmpty(product.description); else defaultDescription">
+      {{ product.description }}
+    </p>
+    <p>
+      <ng-template #defaultDescription>Description missing</ng-template>
+    </p>
+    <button type="button" (click)="addToCart(product)">Buy</button>
 
-  <p *ngIf="checkIfEmpty(product.description); else defaultDescription">
-    {{ product.description }}
-  </p>
-  <p>
-  <ng-template #defaultDescription>Description missing</ng-template>
-  </p>
-  <button type="button" (click)="addToCart(product)">Buy</button>
-
-  <app-product-alerts
-    [product]="product"
-    (notify)="onNotify()">
-  </app-product-alerts>
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+    </app-product-alerts>
+  </div>
+  <ng-template #briefDescription>
+    <div>
+      <h3>
+        <a [title]="'Id = ' + product.id" [routerLink]="['/products', product.id]">
+          {{ product.name }}
+        </a>
+      </h3>
+    </div>
+  </ng-template>
 
 </div>
