@@ -10,10 +10,12 @@
     </a>
   </h3>
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
+  <p *ngIf="checkIfEmpty(product.description); else defaultDescription">
+    {{ product.description }}
   </p>
-
+  <p>
+  <ng-template #defaultDescription>Description missing.</ng-template>
+  </p>
   <button type="button" (click)="share()">
     Share
   </button>

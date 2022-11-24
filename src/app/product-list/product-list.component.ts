@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { stringify } from 'querystring';
 
 import { products } from '../products';
 
@@ -17,5 +18,9 @@ export class ProductListComponent {
 
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
+  }
+
+  checkIfEmpty(s: string) {
+    return s.trim().length
   }
 }
