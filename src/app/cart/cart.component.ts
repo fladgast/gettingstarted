@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 
 import { Product, products } from '../products';
 import { CartService } from '../cart.service';
+import { isEmpty } from '../string-utilities';
 
 @Component({
   selector: 'app-cart',
@@ -13,6 +14,8 @@ export class CartComponent {
 
   items = this.cartService.getItems();
 
+  errorMessage: string = "";
+
   checkoutForm = this.formBuilder.group({
     name: '',
     address: ''
@@ -21,13 +24,18 @@ export class CartComponent {
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
-  ) {}
+  ) { }
 
   onSubmit(): void {
     // Process checkout data here
+    if (isEmpty(this.checkoutForm.value.name) || isEmpty(this.checkoutForm.value.address)) {
+      this.errorMessage = "Enter name and address"
+      return
+    }
     this.items = this.cartService.clearCart();
-    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.errorMessage = "";
     this.checkoutForm.reset();
+    window.alert('Your order has been sumbitted')
   }
 
   addThree(): void {
