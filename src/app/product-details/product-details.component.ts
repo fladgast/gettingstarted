@@ -18,6 +18,8 @@ export class ProductDetailsComponent implements OnInit {
     private cartService: CartService
   ) { }
 
+    purchaseText: string = '';
+
   ngOnInit() {
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
@@ -29,6 +31,6 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+    this.purchaseText = 'The product has been added to the cart';
   }
 }
