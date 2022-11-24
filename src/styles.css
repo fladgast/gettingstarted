@@ -149,3 +149,8 @@ app-top-bar h1 {
   margin-bottom: 10px;
   box-shadow: 2px 2px 5px;
 }
+
+.debug-button {
+  background-color: gray;
+  margin: 20px 0px 20px 0px;
+}

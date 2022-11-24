@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
+import { Product, products } from '../products';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -27,5 +28,11 @@ export class CartComponent {
     this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
+  }
+
+  addThree(): void {
+    this.cartService.addToCart(products[0])
+    this.cartService.addToCart(products[1])
+    this.cartService.addToCart(products[2])
   }
 }
