@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { count } from 'console';
 
 import { Chips, chipsTypes } from '../chips';
 
@@ -29,7 +30,21 @@ export class LabComponent {
         onlyEstrellaArray.push(chips)
       }
     }
-    this.chipsTypes = onlyEstrellaArray
+    this.chipsTypes = [...onlyEstrellaArray]
+  }
+
+  isOnlyEstrella(): boolean {
+    let count: number = 0;
+
+    for (let chips of chipsTypes) {
+      if (chips.producer == 'Estrella') {
+        count++
+      }
+    }
+    if (this.chipsTypes.length == count) {
+      return true
+    }
+    return false
   }
 
 }
