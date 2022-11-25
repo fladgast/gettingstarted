@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class LabComponent {
 
+  num: number = 0
+
+  addOne() {
+    this.num++
+  }
+
+  resetNum() {
+    this.num = 0
+  }
+
 }
