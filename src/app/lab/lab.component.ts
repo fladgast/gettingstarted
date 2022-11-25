@@ -21,4 +21,15 @@ export class LabComponent {
 
   chipsTypes = [...chipsTypes];
 
+  onlyEstrella() {
+    let onlyEstrellaArray: Chips[] = []
+
+    for (let chips of chipsTypes) {
+      if (chips.producer == 'Estrella') {
+        onlyEstrellaArray.push(chips)
+      }
+    }
+    this.chipsTypes = onlyEstrellaArray
+  }
+
 }
