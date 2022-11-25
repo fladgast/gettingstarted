@@ -16,7 +16,7 @@
         <th>Producer</th>
         <th>Price</th>
     </tr>
-    <tr *ngFor="let chips of chipsTypes">
+    <tr *ngFor="let chips of chipsTypes" [ngClass]="isEstrella(chips) ? 'emphasis' : ''">
         <td>{{chips.id}}</td>
         <td>{{chips.name}}</td>
         <td>{{chips.weight}}</td>

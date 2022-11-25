@@ -166,3 +166,7 @@ td, th {
 td {
   padding: 10px;
 }
+
+.emphasis {
+  background-color: rgb(251, 251, 174);
+}

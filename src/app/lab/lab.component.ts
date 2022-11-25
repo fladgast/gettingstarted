@@ -47,4 +47,8 @@ export class LabComponent {
     return false
   }
 
+  isEstrella(c: Chips): boolean {
+    return c.producer == 'Estrella'
+  }
+
 }
