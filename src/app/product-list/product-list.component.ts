@@ -42,4 +42,8 @@ export class ProductListComponent {
   showDescription() {
     this.brief = false;
   }
+
+  amountInCart(id: number): number {
+    return this.cartService.getAllById(id).length
+  }
 }

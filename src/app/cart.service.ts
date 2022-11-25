@@ -28,4 +28,15 @@ export class CartService {
   getShippingPrices() {
     return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
   }
+
+  getAllById(id: number):Product[] {
+    let productsById: Product[] = [];
+
+    for (let product of this.items) {
+      if (product.id == id) {
+        productsById.push(product)
+      }
+    }
+    return productsById
+  }
 }

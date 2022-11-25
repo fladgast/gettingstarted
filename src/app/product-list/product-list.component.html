@@ -21,6 +21,7 @@
 
     <app-product-alerts [product]="product" (notify)="onNotify()">
     </app-product-alerts>
+    <p *ngIf="amountInCart(product.id)">{{'Amount in cart: ' + amountInCart(product.id)}}</p>
   </div>
   <ng-template #briefDescription>
     <div>
