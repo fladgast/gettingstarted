@@ -155,3 +155,14 @@ app-top-bar h1 {
   background-color: gray;
   margin: 20px 0px 20px 0px;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: solid 1px;
+}
+td {
+  padding: 10px;
+}

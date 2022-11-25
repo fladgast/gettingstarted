@@ -3,3 +3,22 @@
 <button type="button" (click)="addOne()">Add one</button>
 <button type="button" (click)="resetNum()">Reset</button>
 <p>{{num}}</p>
+
+<h2>Chips</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Producer</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let chips of chipsTypes">
+        <td>{{chips.id}}</td>
+        <td>{{chips.name}}</td>
+        <td>{{chips.weight}}</td>
+        <td>{{chips.producer}}</td>
+        <td>{{chips.price}}</td>
+    </tr>
+</table>

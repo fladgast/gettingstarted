@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Chips, chipsTypes } from '../chips';
+
 @Component({
   selector: 'app-lab',
   templateUrl: './lab.component.html',
@@ -16,5 +18,7 @@ export class LabComponent {
   resetNum() {
     this.num = 0
   }
+
+  chipsTypes = [...chipsTypes];
 
 }
